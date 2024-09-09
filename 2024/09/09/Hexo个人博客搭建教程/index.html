@@ -1,0 +1,967 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="哈皮">
+  <meta name="keywords" content="哈皮">
+  
+    <meta name="description" content="Hexo + GitHub Pages 搭建个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + GitHub Pages 搭建个人博客">
+<meta property="og:url" content="https://blog.100234.xyz/2024/09/09/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="哈皮">
+<meta property="og:description" content="Hexo + GitHub Pages 搭建个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-09T02:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-09T02:00:00.000Z">
+<meta property="article:author" content="哈皮">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Fluid">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Hexo + GitHub Pages 搭建个人博客 - 哈皮</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/cloudedGlass.css">
+<link rel="stylesheet" href="/css/macBorder.css">
+<link rel="stylesheet" href="/css/macBorderCodePath.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.100234.xyz","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>哈皮</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo + GitHub Pages 搭建个人博客"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-09 10:00" pubdate>
+          2024年9月9日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hexo + GitHub Pages 搭建个人博客</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git</a>: 2.45.1+</li>
+<li><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Node.js</a>: 16.20.2+</li>
+</ul>
+<p>基础环境安装请参考官网文档或网上教程</p>
+<p>执行命令<code>git -v</code>验证Git版本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git -v<br></code></pre></td></tr></table></figure>
+
+<p>执行命令<code>node -v</code>验证Node.js版本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">node -v<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>官网：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></p>
+<h3 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h3><p>执行命令<code>npm install -g hexo-cli</code>安装Hexo环境</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+
+<p>安装完成后执行命令<code>hexo -v</code>验证是否安装成功</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo -v<br></code></pre></td></tr></table></figure>
+
+<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><p>执行命令<code>hexo init</code>初始化Hexo项目</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo init hexo-blog-source<br></code></pre></td></tr></table></figure>
+
+<p>执行命令后会自动创建以项目名<code>hexo-blog-source</code>命名的文件夹</p>
+<p>进入项目目录执行命令安装相关依赖</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> hexo-blog-source<br>npm install<br></code></pre></td></tr></table></figure>
+
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p>执行命令<code>hexo server</code>运行Hexo项目</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo server<br></code></pre></td></tr></table></figure>
+
+<p>打开浏览器，输入地址：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，展示Hexo首页说明运行成功</p>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>修改根目录下 <code>_config.yml</code> 配置文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Site</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">Hexo</span>  <span class="hljs-comment"># 网站标题</span><br><span class="hljs-attr">subtitle:</span> <span class="hljs-string">&#x27;&#x27;</span>  <span class="hljs-comment"># 网站副标题</span><br><span class="hljs-attr">description:</span> <span class="hljs-string">&#x27;&#x27;</span>  <span class="hljs-comment"># 网站描述</span><br><span class="hljs-attr">keywords:</span>  <span class="hljs-comment"># 网站的关键词。 支持多个关键词。</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">John</span> <span class="hljs-string">Doe</span>  <span class="hljs-comment"># 您的名字</span><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 网站使用的语言。默认为 en，中国大陆地区可以使用 zh-CN</span><br><span class="hljs-attr">timezone:</span> <span class="hljs-string">Asia/Shanghai</span>  <span class="hljs-comment"># 网站时区。中国大陆地区可以使用 Asia/Shanghai</span><br><br><span class="hljs-comment"># URL</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">http://example.com</span>  <span class="hljs-comment"># 网址, 必须以 http:// 或 https:// 开头</span><br><span class="hljs-attr">root:</span> <span class="hljs-string">/</span>  <span class="hljs-comment"># 网站根目录</span><br></code></pre></td></tr></table></figure>
+
+<p>运行项目查看配置是否修改成功。</p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>如下修改 Hexo 博客目录中的 <code>_config.yml</code>，启用资源文件夹</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span>  <span class="hljs-comment"># 启用资源文件夹 新建文章时生成一个同名的资源文件夹用于存放图片文件</span><br><span class="hljs-attr">marked:</span><br>  <span class="hljs-attr">prependRoot:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">postAsset:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>启用资源文件夹后，资源图片将会被自动解析为其对应文章的路径。</p>
+<p>例如：将<code>image.jpg</code> 图片存放在<code>source/_posts/</code>目录下的<code>文章同名文件夹</code>中，使用<code>![](image.jpg)</code> 即可直接引用图片。</p>
+</blockquote>
+<p>执行命令创建一篇新文章，名为《测试文章》</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo new post 测试文章<br></code></pre></td></tr></table></figure>
+
+<p>执行完成后在<code>source/_posts/</code>目录下生成了一个.md文件和一个同名的资源文件夹。</p>
+<p>运行项目查看文章是否添加成功。</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>官网主题：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo主题</a></p>
+<p>推荐主题：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>、<a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></p>
+<p>下面以Fluid为例演示更换主题步骤。</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装</p>
+<p>进入博客目录执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+
+<p>然后在博客根目录下创建 <code>_config.fluid.yml</code>配置文件，将主题的<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">_config.yml</a>内容复制过去。</p>
+<p>或者将<code>/node_modules/hexo-theme-fluid/_config.yml</code>文件中的内容复制过去。</p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>下载 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/releases">Fluid 最新 release 版本</a> 解压到 themes 目录，并将解压出的文件夹重命名为 <code>fluid</code>。</p>
+<h3 id="指定主题"><a href="#指定主题" class="headerlink" title="指定主题"></a>指定主题</h3><p>如下修改 Hexo 博客目录中的 <code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="创建关于页"><a href="#创建关于页" class="headerlink" title="创建关于页"></a>创建关于页</h3><p>首次使用主题的「关于页」需要手动创建：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo new page about<br></code></pre></td></tr></table></figure>
+
+<p>创建成功后修改 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
+<p>修改后的文件示例如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">about</span><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2024-09-09 10:00:00</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">这里写关于页的正文，支持</span> <span class="hljs-string">Markdown,</span> <span class="hljs-string">HTML</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>layout: about</code> 必须存在，并且不能修改成其他值，否则不会显示头像等样式。</p>
+</blockquote>
+<p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>about</code> 字段的名称和简介</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">#---------------------------</span><br><span class="hljs-comment"># 关于页</span><br><span class="hljs-comment"># About Page</span><br><span class="hljs-comment">#---------------------------</span><br><span class="hljs-attr">about:</span><br>  <span class="hljs-attr">name:</span> <span class="hljs-string">&quot;Fluid&quot;</span><br>  <span class="hljs-attr">intro:</span> <span class="hljs-string">&quot;An elegant theme for Hexo&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>重新运行Hexo项目查看主题效果。</p>
+<h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><h4 id="方式一-1"><a href="#方式一-1" class="headerlink" title="方式一"></a>方式一</h4><p>适用于通过 Npm 安装主题</p>
+<p>在博客目录下执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm update --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+
+<h4 id="方式二-1"><a href="#方式二-1" class="headerlink" title="方式二"></a>方式二</h4><p>适用于通过 Release 压缩包安装主题。</p>
+<ol>
+<li>先将原文件夹重命名为别的名称，例如 <code>fluid-bkp</code>，用于升级失败进行回退；</li>
+<li>按照安装步骤，重新下载 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/releases">release</a>并解压重命名为 <code>fluid</code>；</li>
+<li>如果某些配置发生了变化（改名或弃用），release 的说明里会特别提示，同步修改原配置文件即可。</li>
+</ol>
+<h3 id="修改网站标题"><a href="#修改网站标题" class="headerlink" title="修改网站标题"></a>修改网站标题</h3><p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>navbar.blog_title</code> 字段</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 导航栏的相关配置</span><br><span class="hljs-attr">navbar:</span><br>  <span class="hljs-comment"># 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示</span><br>  <span class="hljs-attr">blog_title:</span> <span class="hljs-string">&quot;Fluid&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="修改首页副标题"><a href="#修改首页副标题" class="headerlink" title="修改首页副标题"></a>修改首页副标题</h3><p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>slogan.text</code> 字段</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 首页副标题的独立设置</span><br><span class="hljs-attr">slogan:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-comment"># 为空则按 hexo config.subtitle 显示</span><br>  <span class="hljs-attr">text:</span> <span class="hljs-string">&quot;An elegant Material-Design theme for Hexo&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="网站访问量统计"><a href="#网站访问量统计" class="headerlink" title="网站访问量统计"></a>网站访问量统计</h3><p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>footer.statistics.enable</code> 字段</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">footer:</span><br><br>  <span class="hljs-comment"># 展示网站的 PV、UV 统计数</span><br>  <span class="hljs-attr">statistics:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br><br>    <span class="hljs-comment"># 统计数据来源，使用 leancloud, umami 需要设置 `web_analytics` 中对应的参数；使用 busuanzi 不需要额外设置，但是有时不稳定，另外本地运行时 busuanzi 显示统计数据很大属于正常现象，部署后会正常</span><br>    <span class="hljs-comment"># Options: busuanzi | leancloud | umami</span><br>    <span class="hljs-attr">source:</span> <span class="hljs-string">&quot;busuanzi&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="文章浏览量统计"><a href="#文章浏览量统计" class="headerlink" title="文章浏览量统计"></a>文章浏览量统计</h3><p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>post.meta.views.enable</code> 字段</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 文章标题下方的元信息</span><br>  <span class="hljs-attr">meta:</span><br>    <span class="hljs-comment"># 浏览量计数</span><br>    <span class="hljs-attr">views:</span><br>      <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>      <span class="hljs-comment"># 统计数据来源</span><br>      <span class="hljs-comment"># Options: busuanzi | leancloud | umami</span><br>      <span class="hljs-attr">source:</span> <span class="hljs-string">&quot;busuanzi&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="文章更新时间"><a href="#文章更新时间" class="headerlink" title="文章更新时间"></a>文章更新时间</h3><p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>post.updated.enable</code> 字段</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）</span><br>  <span class="hljs-attr">updated:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="背景全屏固定"><a href="#背景全屏固定" class="headerlink" title="背景全屏固定"></a>背景全屏固定</h3><h4 id="注入背景容器"><a href="#注入背景容器" class="headerlink" title="注入背景容器"></a>注入背景容器</h4><p>根目录下新建<code>scripts</code>文件夹，新建<code>injector.js</code>文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    注入背景容器</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-keyword">const</span> &#123; <span class="hljs-attr">root</span>: siteRoot = <span class="hljs-string">&quot;/&quot;</span> &#125; = hexo.<span class="hljs-property">config</span>;<br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&quot;body_begin&quot;</span>, <span class="hljs-string">`&lt;div id=&quot;web_bg&quot;&gt;&lt;/div&gt;`</span>);<br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">injector</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&quot;body_end&quot;</span>,<span class="hljs-string">`&lt;script src=&quot;<span class="hljs-subst">$&#123;siteRoot&#125;</span>js/backgroundize.js&quot;&gt;&lt;/script&gt;`</span>);<br></code></pre></td></tr></table></figure>
+
+<p>不需要引用，hexo自动执行调用<code>scripts</code>目录里面的js文件。</p>
+<h4 id="背景替换"><a href="#背景替换" class="headerlink" title="背景替换"></a>背景替换</h4><p><code>source/js</code>目录下新建<code>backgroundize.js</code>文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    背景替换</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-variable language_">document</span><br>    .<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#web_bg&#x27;</span>)<br>    .<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;style&#x27;</span>, <span class="hljs-string">`background-image: <span class="hljs-subst">$&#123;<span class="hljs-variable language_">document</span>.querySelector(<span class="hljs-string">&#x27;.banner&#x27;</span>).style.background.split(<span class="hljs-string">&#x27; &#x27;</span>)[<span class="hljs-number">0</span>]&#125;</span>;position: fixed;width: 100%;height: 100%;z-index: -1;background-size: cover;`</span>);<br><br><span class="hljs-variable language_">document</span><br>    .<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#banner&quot;</span>)<br>    .<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;style&#x27;</span>, <span class="hljs-string">&#x27;background-image: url()&#x27;</span>)<br><br><span class="hljs-variable language_">document</span><br>    .<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#banner .mask&quot;</span>)<br>    .<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;style&#x27;</span>, <span class="hljs-string">&#x27;background-color:rgba(0,0,0,0)&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>这里被上面的<code>injector.js</code>文件调用了，所以不需要再到配置文件里面调用了。</p>
+<h3 id="毛玻璃效果"><a href="#毛玻璃效果" class="headerlink" title="毛玻璃效果"></a>毛玻璃效果</h3><h4 id="透明背景"><a href="#透明背景" class="headerlink" title="透明背景"></a>透明背景</h4><p>根目录下<code>_config.fluid.yml</code>修改背景色为透明</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">color:</span><br>  <span class="hljs-comment"># 主面板背景色</span><br>  <span class="hljs-comment"># Color of main board</span><br>  <span class="hljs-attr">board_color:</span> <span class="hljs-string">&quot;#ffffff80&quot;</span><br>  <span class="hljs-attr">board_color_dark:</span> <span class="hljs-string">&quot;#00000080&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="毛玻璃滤镜"><a href="#毛玻璃滤镜" class="headerlink" title="毛玻璃滤镜"></a>毛玻璃滤镜</h4><p><code>source/css</code>目录下新建<code>cloudedGlass.css</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    毛玻璃滤镜</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-selector-id">#board</span> &#123;<br>    -webkit-backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">20px</span>);<br>    backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">20px</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>_config.fluid.yml</code>引入</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 指定自定义 .css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/cloudedGlass.css</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="代码块样式"><a href="#代码块样式" class="headerlink" title="代码块样式"></a>代码块样式</h3><h4 id="Mac边框样式"><a href="#Mac边框样式" class="headerlink" title="Mac边框样式"></a>Mac边框样式</h4><p>根目录下<code>source/css</code>目录中新建<code>macBorder.css</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    代码块修改Mac边框样式</span><br><span class="hljs-comment">    该方案基于&lt;table&gt;标签，所以务必把行号显示打开，且方案基于highlight.js高亮</span><br><span class="hljs-comment">    line_number: true</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-selector-class">.hljs-comment</span>, <span class="hljs-selector-class">.hljs-quote</span> &#123;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff6262</span>;<br>    <span class="hljs-attribute">font-family</span>: auto;<br>    <span class="hljs-attribute">font-style</span>: normal;<br>&#125;<br><br><span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> &#123;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#838383</span>;<br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;<br>    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">30px</span>;<br>    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-number">10px</span> <span class="hljs-number">#a1a1a1</span>;<br>&#125;<br><br><span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">&#x27;dark&#x27;</span>]</span> <span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> &#123;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#000</span>;<br>&#125;<br><br><span class="hljs-comment">/* 该伪元素用于展示代码语言,若不需要可删除 */</span><br><span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span><span class="hljs-selector-pseudo">::before</span> &#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(data-type);<br>    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">999</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff8d33</span>;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">2px</span>;<br>    <span class="hljs-attribute">text-align</span>: center;<br>    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;<br>&#125;<br><br><span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#fc625d</span>;<br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">20px</span> <span class="hljs-number">0</span> <span class="hljs-number">#fdbc40</span>, <span class="hljs-number">40px</span> <span class="hljs-number">0</span> <span class="hljs-number">#35cd4b</span>;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">12px</span>;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">9px</span>;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">12px</span>;<br>&#125;<br><br><span class="hljs-selector-class">.hljs</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#00000000</span>;<br>&#125;<br><br><span class="hljs-comment">/* 代码块颜色 */</span><br><span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> <span class="hljs-selector-tag">tr</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f9fffa</span>;<br>&#125;<br><br><span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">&#x27;dark&#x27;</span>]</span> <span class="hljs-selector-class">.markdown-body</span> <span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">tr</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#25272d</span>;<br>&#125;<br><br><span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> &gt; <span class="hljs-selector-tag">table</span> &#123;<br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span>;<br>&#125;<br><br><span class="hljs-selector-class">.gutter</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f9fffa</span>;<br>&#125;<br><br><span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">&#x27;dark&#x27;</span>]</span> <span class="hljs-selector-class">.gutter</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#25272d</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>该方案基于table标签，所以务必把行号显示打开，且方案基于highlight.js高亮</p>
+</blockquote>
+<p>在<code>_fluid.config.yml</code>中引入</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 代码块的增强配置</span><br><span class="hljs-attr">code:</span><br>    <span class="hljs-comment"># 代码块是否显示行号</span><br>    <span class="hljs-attr">line_number:</span> <span class="hljs-literal">true</span><br><br><span class="hljs-comment"># 指定自定义 .css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/cloudedGlass.css</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/macBorder.css</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="显示代码语言"><a href="#显示代码语言" class="headerlink" title="显示代码语言"></a>显示代码语言</h4><p>根目录下<code>source/js</code>目录新建<code>macBorderCodeType.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    代码块显示代码语言</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">languageStyle</span> = (<span class="hljs-params">str</span>) =&gt; &#123;<br>    <span class="hljs-comment">/* 单独优化 */</span><br>    <span class="hljs-keyword">if</span> ([<span class="hljs-string">&#x27;js&#x27;</span>, <span class="hljs-string">&#x27;javascript&#x27;</span>].<span class="hljs-title function_">includes</span>(str)) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;JavaScript&#x27;</span><br>    <span class="hljs-keyword">if</span> ([<span class="hljs-string">&#x27;ts&#x27;</span>, <span class="hljs-string">&#x27;typescript&#x27;</span>].<span class="hljs-title function_">includes</span>(str)) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;TypeScript&#x27;</span><br>    <span class="hljs-comment">/* 曲线救国(Highlight不支持vue) */</span><br>    <span class="hljs-keyword">if</span> (str === <span class="hljs-string">&#x27;xml&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Vue&#x27;</span><br><br>    <span class="hljs-comment">// return str</span><br>    <span class="hljs-comment">/* 全小写风格 */</span><br>    <span class="hljs-keyword">return</span> str.<span class="hljs-title function_">toUpperCase</span>()<br>    <span class="hljs-comment">/*全大写风格 */</span><br>    <span class="hljs-comment">// return str[0].toUpperCase() + str.substring(1)</span><br>    <span class="hljs-comment">/*首字母大写风格 */</span><br>&#125;<br><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;figure.highlight&#x27;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> &#123;<br>    item.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;data-type&#x27;</span>, <span class="hljs-title function_">languageStyle</span>(item.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&#x27;class&#x27;</span>).<span class="hljs-title function_">substring</span>(<span class="hljs-number">10</span>)))<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>在<code>_fluid.config.yml</code>中引入</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js</span><br><span class="hljs-attr">custom_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/macBorderCodeType.js</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="显示文件路径"><a href="#显示文件路径" class="headerlink" title="显示文件路径"></a>显示文件路径</h4><p>根目录下<code>source/css</code>目录中新建<code>macBorderCodePath.css</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">    代码块显示文件路径</span><br><span class="hljs-comment">    使用方法：</span><br><span class="hljs-comment">    在代码块上一行添加添加：&lt;p class=&quot;file-path&quot;&gt;&lt;span&gt;路径&lt;/span&gt;&lt;/p&gt;</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span> + <span class="hljs-selector-tag">figure</span><span class="hljs-selector-class">.highlight</span> &#123;<br>    <span class="hljs-attribute">border-top-left-radius</span>: <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span> &#123;<br>    <span class="hljs-attribute">font-family</span>: 华文新魏,SSTXinwei;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#9ce159</span>;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#838383</span>;<br>    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">1.6rem</span>;<br>    <span class="hljs-attribute">margin-bottom</span>: -<span class="hljs-number">0.5rem</span>;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">0.2rem</span> <span class="hljs-number">0</span> <span class="hljs-number">0.2rem</span>;<br>    <span class="hljs-attribute">display</span>: inline-block;<br>    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">1.5rem</span>;<br>    <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">drop-shadow</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">4px</span> <span class="hljs-number">#a1a1a1</span>);<br>&#125;<br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span>&gt;<span class="hljs-selector-tag">span</span> &#123;<br>    <span class="hljs-attribute">display</span>: inline-block;<br>    <span class="hljs-attribute">white-space</span>: nowrap;<br>    <span class="hljs-attribute">overflow</span>: hidden;<br>    <span class="hljs-attribute">text-overflow</span>: ellipsis;<br>    <span class="hljs-attribute">direction</span>: rtl;<br>    <span class="hljs-attribute">text-align</span>: left;<br>    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">500px</span>;<br>&#125;<br><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">768px</span>) &#123;<br>    <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span>&gt;<span class="hljs-selector-tag">span</span> &#123;<br>        <span class="hljs-attribute">max-width</span>: <span class="hljs-number">300px</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">500px</span>) &#123;<br>    <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span>&gt;<span class="hljs-selector-tag">span</span> &#123;<br>        <span class="hljs-attribute">max-width</span>: <span class="hljs-number">160px</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">&#x27;dark&#x27;</span>]</span> <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span> &#123;<br>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#000</span>;<br>&#125;<br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span><span class="hljs-selector-pseudo">::before</span> &#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;🔖 Path:/&#x27;</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff7e7e</span>;<br>    <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;<br>    <span class="hljs-attribute">position</span>: relative;<br>    <span class="hljs-attribute">top</span>: -<span class="hljs-number">0.4rem</span>;<br>&#125;<br><br><span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;<br>    <span class="hljs-attribute">display</span>: inline-block;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-attribute">border-width</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">0.8rem</span> solid <span class="hljs-number">#00000000</span>;<br>    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">0.8rem</span> solid <span class="hljs-number">#00000000</span>;<br>    <span class="hljs-attribute">right</span>: -<span class="hljs-number">1.2rem</span>;<br>    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">20px</span> solid <span class="hljs-number">#838383</span>;<br>&#125;<br><br><span class="hljs-selector-attr">[data-user-color-scheme=<span class="hljs-string">&#x27;dark&#x27;</span>]</span> <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.file-path</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>    <span class="hljs-attribute">border-left</span>: <span class="hljs-number">20px</span> solid <span class="hljs-number">#000</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>在<code>_fluid.config.yml</code>中引入</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 指定自定义 .css 文件路径，用法和 custom_js 相同</span><br><span class="hljs-attr">custom_css:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/cloudedGlass.css</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/macBorder.css</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/css/macBorderCodePath.css</span><br></code></pre></td></tr></table></figure>
+
+<p>使用方法：在代码块上一行添加<code>&lt;p class=&quot;file-path&quot;&gt;&lt;span&gt;这里填写路径&lt;/span&gt;&lt;/p&gt;</code></p>
+<p class="file-path"><span>这里填写路径</span></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;file-path&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>这里填写路径<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h3><p>Fluid主题支持的评论有很多，具体可以查看官网：<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/#%E8%AF%84%E8%AE%BA">Hexo Fluid 用户手册</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/utterance/utterances">Utterances</a>是基于<code>GitHub Issues</code>的评论工具，评论时需要使用GitHub账号登录授权。</p>
+<h4 id="创建评论仓库"><a href="#创建评论仓库" class="headerlink" title="创建评论仓库"></a>创建评论仓库</h4><p>创建存放comments的GitHub仓库，必须为Public，且可创建issue。</p>
+<p>安装<a target="_blank" rel="noopener" href="https://github.com/apps/utterances">utterances app</a>到刚刚创建的那个仓库。需要先登录GitHub账号才会显示<code>Install</code>按钮，未登陆时不会显示，已安装则显示的是<code>configure</code>按钮。</p>
+<h4 id="配置评论功能"><a href="#配置评论功能" class="headerlink" title="配置评论功能"></a>配置评论功能</h4><p>在<code>_fluid.config.yml</code>中开启评论</p>
+<p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>post.comments</code> 字段，开启评论功能</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post:</span><br>  <span class="hljs-comment"># 评论插件</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">utterances</span><br></code></pre></td></tr></table></figure>
+
+<p>修改根目录下 <code>_config.fluid.yml</code> 中的 <code>utterances.repo</code> 字段，配置自己的仓库地址</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-meta"># Utterances</span><br><span class="hljs-symbol">utterances:</span><br><span class="hljs-symbol">  repo:</span> xxx/xxx <span class="hljs-meta"># 修改为自己的：GitHub账号名/仓库名</span><br></code></pre></td></tr></table></figure>
+
+<p>重启即Hexo可以看到评论区</p>
+<h2 id="GitHub自动部署"><a href="#GitHub自动部署" class="headerlink" title="GitHub自动部署"></a>GitHub自动部署</h2><p>官网：<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></p>
+<p>GitHub有两种部署方式：公开仓库和私有仓库</p>
+<h3 id="公开仓库部署"><a href="#公开仓库部署" class="headerlink" title="公开仓库部署"></a>公开仓库部署</h3><p>对于源码没隐私要求的可以按照官网教程<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">在 GitHub Pages 上部署 Hexo</a>的教程安装，适用于公开仓库，上传源码后使用<code>GitHub Actions</code>部署访问。</p>
+<h3 id="私有仓库部署"><a href="#私有仓库部署" class="headerlink" title="私有仓库部署"></a>私有仓库部署</h3><p>鉴于隐私安全的考虑，希望将源码上传到私有仓库后部署，私用仓库是不能使用直接使用<code>GitHub Actions</code>部署访问的，所以除了私有源码仓库之外，还需要创建一个公开博客仓库。</p>
+<h4 id="准备两个仓库"><a href="#准备两个仓库" class="headerlink" title="准备两个仓库"></a>准备两个仓库</h4><ul>
+<li><p>博客源码 - 私有仓库：<code>hexo-blog-source</code></p>
+</li>
+<li><p>博客部署 - 公开仓库：<code>hexo-blog-deploy</code></p>
+</li>
+</ul>
+<p>注意：如果安装了主题，并且是从GitHub上Clone下来的，那么主题文件夹中（比如themes&#x2F;fluid&#x2F;)会有名为<code>.git</code>的隐藏文件夹用于git同步，需要把它删除，因为我们备份到私有仓库的时候是把主题文件一起备份的（这样才能在自动化部署中保留主题），嵌套的git仓库会报错，当然删除以后就不能用<code>git pull</code>的方式更新主题了。</p>
+<p>把本地的博客文件夹上传到<code>hexo</code>私有仓库，并保证<code>.gitignore</code>文件中包含以下几项，避免以前手动生成及部署过的文件也作为源文件上传：</p>
+<ul>
+<li>.deploy*&#x2F;</li>
+<li>node_modules&#x2F;</li>
+<li>public&#x2F;</li>
+</ul>
+<h4 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h4><p>在根目录打开<code>Git Bash</code></p>
+<p>执行<code>git init</code>命令，初始化本地仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git init<br></code></pre></td></tr></table></figure>
+
+<p>执行<code>git remote add origin git@github.com:xxx/xxx.git</code>与自己的GitHub远程仓库关联</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git remote add origin git@github.com:xxx/xxx.git<br></code></pre></td></tr></table></figure>
+
+<p>执行<code>git pull origin main --allow-unrelated-histories</code>命令，拉取远程仓库最新代码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git pull origin main --allow-unrelated-histories<br></code></pre></td></tr></table></figure>
+
+<p>执行<code>git add .</code>命令，将目录下所有文件添加到本地仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git add .<br></code></pre></td></tr></table></figure>
+
+<p>执行<code>git commit -m &quot;初始化仓库&quot;</code>命令，将添加的文件提交到本地仓库，<code>-m</code>后面的参数是提交描述</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git commit -m <span class="hljs-string">&quot;初始化仓库&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>执行<code>git push -u origin main</code>命令，把文件推送到远程仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git push -u origin main<br></code></pre></td></tr></table></figure>
+
+<p>至此，已成功将本地代码上传到GitHub远程仓库</p>
+<h4 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h4><p>GitHub有两种密钥：<code>Fine-grained personal access token</code>和<code>Personal access tokens (classic)</code>。GitHub 建议尽可能使用<code>Fine-grained personal access token</code>。</p>
+<p>简单来说两种的区别：<code>Fine-grained</code>是细粒度令牌，每个令牌只能访问特定的存储库，特定的权限，且必须有到期日期。<code>Personal</code>没有时间限制，权限更大。具体区别可查看官网文档：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">管理个人访问令牌 - GitHub 文档</a>。</p>
+<p><strong>生成密钥：</strong></p>
+<p>在<code>GitHub</code>主页点击右上角头像 -&gt; <code>Settings </code>-&gt; <code>Developer Settings</code> -&gt; <code>Personal access tokens</code> -&gt; <code>Fine-grained tokens</code> -&gt; <code>Generate new token</code>，随便起一个名字（例如仓库名），选择有效期（最长1年），选择<code>Only select repositories</code>，在<code>Select repositories</code>中选择公开部署仓库，在<code>Repository permissions</code>中选择<code>Read and write</code>权限：</p>
+<ul>
+<li>Actions</li>
+<li>Commit statuse</li>
+<li>Contents</li>
+<li>Deployments</li>
+<li>Pages</li>
+<li>Pull requests</li>
+<li>Workflows</li>
+</ul>
+<p>点击<code>Generate token</code>生成，复制秘钥，这个秘钥只显示一次，如果没有保存，重新生成一即可。</p>
+<p><strong>设置秘钥：</strong></p>
+<p>选择你备份源文件的私有仓库 -&gt; <code>Settings</code> -&gt; <code>Secrets and variables</code> -&gt; <code>Actions</code> -&gt; <code>New repository secret</code>，这里命名为<code>HEXO_DEPLOY_TOKEN</code>，把秘钥内容复制进去保存。</p>
+<h4 id="创建GitHub-Actions脚本"><a href="#创建GitHub-Actions脚本" class="headerlink" title="创建GitHub Actions脚本"></a>创建GitHub Actions脚本</h4><p>创建一个<code>.github/workflows/pages.yml</code>文件(没有目录就先创建目录）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Pages</span> <span class="hljs-comment">#脚本名称</span><br><br><span class="hljs-attr">on:</span> <span class="hljs-string">push</span> <span class="hljs-comment">#在push这个操作发生的时候执行脚本，也可以指定分支，默认main</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">pages:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span> <span class="hljs-comment">#虚拟环境</span><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span> <span class="hljs-comment">#uses指令就是用的其它的现成的脚本</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-number">16.20</span><span class="hljs-number">.2</span> <span class="hljs-comment">#name只是提供一个名称</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span><br>        <span class="hljs-attr">with:</span> <span class="hljs-comment">#可以用with提供参数信息</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-string">&#x27;16.20.2&#x27;</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Cache</span> <span class="hljs-string">NPM</span> <span class="hljs-string">dependencies</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/cache@v2</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">path:</span> <span class="hljs-string">node_modules</span><br>          <span class="hljs-attr">key:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">runner.OS</span> <span class="hljs-string">&#125;&#125;-npm-cache</span><br>          <span class="hljs-attr">restore-keys:</span> <span class="hljs-string">|</span><br><span class="hljs-string">            $&#123;&#123; runner.OS &#125;&#125;-npm-cache</span><br><span class="hljs-string"></span>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">Dependencies</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span><br><br>      <span class="hljs-comment">#上面的操作都是为了准备环境</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-comment">#生成</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">build</span> <span class="hljs-comment">#这里需要保证你博客根目录下的package.json文件中有这个脚本，没有的话添加一下&quot;build&quot;: &quot;hexo generate&quot;</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span> <span class="hljs-comment">#这是一个自动化部署到GitHub pages的脚本</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">personal_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.HEXO_DEPLOY_TOKEN</span> <span class="hljs-string">&#125;&#125;</span> <span class="hljs-comment">#HEXO_DEPLOY_TOKEN这个名称跟源文件仓库中设置的要对应</span><br>          <span class="hljs-attr">external_repository:</span> <span class="hljs-string">xxx/xxx</span>  <span class="hljs-comment">#添加部署的目标仓库，也就是GitHub.io对应的仓库，由&quot;用户名/仓库名&quot;的方式指定</span><br>          <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./public</span> <span class="hljs-comment">#需要发布的文件目录，hexo generate生成的就是./public</span><br>          <span class="hljs-attr">publish_branch:</span> <span class="hljs-string">main</span>  <span class="hljs-comment">#deploying branch部署的分支，对应我们的external_repository</span><br><br></code></pre></td></tr></table></figure>
+
+<p>上面指令用注释进行了简单的说明，需要修改的几个地方：</p>
+<ul>
+<li><p>personal_token：如果设定的秘钥名称不是<code>HEXO_DEPLOY_TOKEN</code>，那么这里也需要修改</p>
+</li>
+<li><p>external_repository：改成你自己的部署静态文件公开仓库</p>
+</li>
+</ul>
+<p>上传成功之后每次提交成功时<code>GitHub Actions</code>都会自动运行脚本，生成静态文件并部署到公开博客仓库。</p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><h4 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h4><p>常用域名购买平台</p>
+<p>国内：阿里云、腾讯云</p>
+<p>国外：GoDaddy、NameSilo、Namecheap、Spaceship</p>
+<h4 id="配置DNS解析"><a href="#配置DNS解析" class="headerlink" title="配置DNS解析"></a>配置DNS解析</h4><p>以<code>Cloudflare</code>为例，登录账号进入主页</p>
+<p>选择域名进入域名管理，点击<code>DNS</code>，点击<code>添加记录</code></p>
+<p><code>类型</code>：选择<code>CNAME</code></p>
+<p><code>名称</code>：填入<code>blog</code>（自定义二级域名）</p>
+<p><code>目标</code>填入<code>xxx.github.io</code>（xxx修改为自己的github用户名）</p>
+<p><code>代理状态</code>：勾选<code>开启</code></p>
+<p>点击<code>保存</code>即可</p>
+<h4 id="配置自定义域名"><a href="#配置自定义域名" class="headerlink" title="配置自定义域名"></a>配置自定义域名</h4><p>在根目录下<code>/source</code>目录中新增文件<code>CNAME</code>，注意文件没有后缀名，</p>
+<p>在文件中输入<code>blog.xxx.xxx</code>（对应自定义域名），保存文件，上传到<code>GitHub</code>远程仓库</p>
+<p>待部署完成即可使用自定义域名<code>blog.xxx.xxx</code>访问博客主页</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">Hexo Fluid 用户手册</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://qingshaner.com/Hexo%20Fluid%E4%B8%BB%E9%A2%98%E8%83%8C%E6%99%AF%E5%9B%BA%E5%AE%9A(ES6%E6%94%B9%E5%86%99%E7%89%88)%E4%B8%8E%E6%AF%9B%E7%8E%BB%E7%92%83%E5%BA%95%E9%A1%B5/">Hexo Fluid主题 背景固定与毛玻璃底页</a></p>
+<p><a target="_blank" rel="noopener" href="https://qingshaner.com/HexoFluid%E4%B8%BB%E9%A2%98%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/#%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A0%B7%E5%BC%8F">Hexo Fluid主题 代码块样式修改</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/guoapeng/p/17627621.html">Hexo博客添加评论功能 - eagle.supper - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/785d727810b3">hexo-fluid添加utterances评论功能(详细图文过程) - 简书 (jianshu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.fewth.com/%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B8%83%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2-%E4%BB%8E%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%88%B0%E5%85%AC%E5%85%B1%E4%BB%93%E5%BA%93/">用github actions自动化布署hexo博客-从私有仓库到公共仓库 - A few thoughts</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jianghaonan0818/p/15365364.html">使用git把本地代码上传（更新）到github上</a></p>
+<p><strong>免责声明：以上内容均来源于网络，如有侵权请联系删除</strong></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Fluid/" class="print-no-link">#Fluid</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hexo + GitHub Pages 搭建个人博客</div>
+      <div>https://blog.100234.xyz/2024/09/09/Hexo个人博客搭建教程/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>哈皮</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/09/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'ohmangopie/hexo-blog-comments');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/macBorderCodeType.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>
